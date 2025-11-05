@@ -139,7 +139,7 @@ function descargarResumen() {
         // clonar para no tocar la UI y forzar tamaño/estilo de impresión
         const clone = resumenEl.cloneNode(true);
         clone.style.fontFamily = 'Arial, sans-serif';
-        clone.style.fontSize = '12px';
+        clone.style.fontSize = '48px';
         clone.style.lineHeight = '1.25';
         clone.style.whiteSpace = 'pre-wrap';
         clone.style.boxSizing = 'border-box';
@@ -290,3 +290,4 @@ window.onload = () => {
     actualizarSelectorFechas();
     cargarDiaActual();
 };
+
