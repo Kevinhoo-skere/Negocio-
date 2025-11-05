@@ -86,11 +86,11 @@ section {
 /* Responsive: pantallas medianas -> móviles */
 @media (max-width: 700px) {
     body {
-        width: 96%;
-        padding: 12px;
+        width: 100%;
+        padding: 10px;
     }
 
-    /* Hacer inputs y botones a ancho completo cuando el espacio es limitado */
+    /* Inputs y botones a ancho completo para mejor usabilidad táctil */
     input,
     select,
     textarea,
@@ -98,16 +98,57 @@ section {
         display: block;
         width: 100%;
         margin: 8px 0;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 8px;
     }
 
-    /* Listas: botón al final sin separarlo demasiado */
+    /* Agrandar targets de botones y mejorar contraste */
+    button {
+        min-height: 44px;
+        font-weight: 600;
+    }
+
+    /* Encabezados más compactos */
+    h1 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* Mejorar disposición de las listas */
     li {
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     li button {
         margin-left: 0;
-        flex: 0 0 auto;
+        margin-top: 6px;
+        width: auto;
+    }
+
+    /* Secciones más estrechas y con menos padding en móvil */
+    section {
+        padding: 10px;
+    }
+
+    /* Resumen: legible en móvil sin empujar layout */
+    #resumenFinal {
+        font-size: 13px;
+        line-height: 1.3;
+        padding: 8px;
+        background: #fff;
+        border-radius: 6px;
+        overflow-wrap: break-word;
+        -webkit-font-smoothing: antialiased;
     }
 }
 
@@ -115,12 +156,12 @@ section {
 @media (max-width: 420px) {
     body {
         font-size: 15px;
-        padding: 10px;
+        padding: 8px;
     }
 
     h1,
     h2 {
-        font-size: clamp(1rem, 4vw, 1.2rem);
+        font-size: clamp(1rem, 4vw, 1.1rem);
     }
 
     ul {
@@ -128,18 +169,29 @@ section {
     }
 
     section {
-        padding: 10px;
+        padding: 8px;
     }
 
     input,
     button {
-        padding: 8px;
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    /* Reducir gaps para aprovechar espacio */
+    li {
+        gap: 6px;
+    }
+
+    #resumenFinal {
+        font-size: 12.5px;
+        padding: 6px;
     }
 }
 
 #resumenFinal {
     font-family: Arial, sans-serif;
-    font-size: 12px;
+    font-size: 24px;
     /* tamaño fijo para exportar */
     line-height: 1.25;
     white-space: pre-wrap;
