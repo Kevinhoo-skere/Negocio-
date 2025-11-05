@@ -184,14 +184,14 @@ section {
     }
 
     #resumenFinal {
-        font-size: 12.5px;
+        font-size: 48px;
         padding: 6px;
     }
 }
 
 #resumenFinal {
     font-family: Arial, sans-serif;
-    font-size: 24px;
+    font-size: 48px;
     /* tamaño fijo para exportar */
     line-height: 1.25;
     white-space: pre-wrap;
@@ -199,3 +199,4 @@ section {
     overflow-wrap: anywhere;
     margin-top: 10px;
 }
+
