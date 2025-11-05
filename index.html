@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión del Negocio</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h1>Gestión Diaria del Negocio</h1>
+
+    <section>
+        <h2>📅 Día</h2>
+        <select id="selectorFecha" onchange="cargarFechaSeleccionada()"></select>
+        <button onclick="cargarDiaActual()">📌 Volver a Hoy</button>
+    </section>
+
+    <section>
+        <h2>📥 Entrada (Ventas)</h2>
+        <input type="number" id="ventaMonto" placeholder="Monto" />
+        <button onclick="agregarEntrada('efectivo')">💵 Efectivo</button>
+        <button onclick="agregarEntrada('transferencia')">💳 Transferencia</button>
+        <ul id="listaEntrada"></ul>
+    </section>
+
+    <section>
+        <h2>📤 Salida (Gastos / Proveedores)</h2>
+        <input type="text" id="gastoDesc" placeholder="Motivo / Proveedor" />
+        <input type="number" id="gastoMonto" placeholder="Monto" />
+        <button onclick="agregarSalida()">Agregar</button>
+        <ul id="listaSalida"></ul>
+    </section>
+
+    <section>
+        <h2>📓 Deudores</h2>
+        <input type="text" id="nombreDeudor" placeholder="Nombre" />
+        <input type="text" id="telefonoDeudor" placeholder="Teléfono" />
+        <input type="text" id="descripcionDeuda" placeholder="Detalle" />
+        <input type="number" id="montoDeuda" placeholder="Monto" />
+        <button onclick="agregarDeudor()">Agregar Deudor</button>
+        <ul id="listaDeudores"></ul>
+    </section>
+
+    <section>
+        <h2>🧾 Cierre del Día</h2>
+        <button onclick="generarResumen()">Generar Resumen</button>
+        <pre id="resumenFinal"></pre>
+        <button onclick="descargarResumen()">Descargar Resumen</button>
+        <button onclick="cambiarDeDia()">Cambiar de Día</button>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
