@@ -17,10 +17,13 @@ body {
     background-color: var(--bg);
     color: var(--text);
     padding: clamp(12px, 2.5vw, 20px);
-    width: min(95%, 800px);
+    width: 100%;
+    /* usar todo el ancho del dispositivo */
     max-width: 800px;
+    /* limitar en pantallas grandes */
     margin: 0 auto;
-    font-size: clamp(15px, 1.6vw, 18px);
+    font-size: clamp(16px, 2.8vw, 18px);
+    /* tamaño base ligeramente mayor para móviles */
     line-height: 1.45;
 }
 
@@ -155,8 +158,9 @@ section {
 /* Ajustes para pantallas muy pequeñas */
 @media (max-width: 420px) {
     body {
-        font-size: 15px;
-        padding: 8px;
+        font-size: 16px;
+        /* asegurar legibilidad en móviles pequeños */
+        padding: 10px;
     }
 
     h1,
@@ -164,35 +168,23 @@ section {
         font-size: clamp(1rem, 4vw, 1.1rem);
     }
 
-    ul {
-        padding-left: 14px;
-    }
-
-    section {
-        padding: 8px;
-    }
-
+    /* inputs y botones ya pasan a 100% en media (max-width:700px) */
     input,
     button {
+        font-size: 16px;
         padding: 12px;
-        font-size: 15px;
-    }
-
-    /* Reducir gaps para aprovechar espacio */
-    li {
-        gap: 6px;
     }
 
     #resumenFinal {
-        font-size: 48px;
-        padding: 6px;
+        font-size: 13px;
+        padding: 8px;
     }
 }
 
+/* Resumen: tamaño razonable por defecto (antes estaba en 48px) */
 #resumenFinal {
     font-family: Arial, sans-serif;
-    font-size: 48px;
-    /* tamaño fijo para exportar */
+    font-size: clamp(12px, 2.5vw, 14px);
     line-height: 1.25;
     white-space: pre-wrap;
     word-break: break-word;
@@ -200,3 +192,8 @@ section {
     margin-top: 10px;
 }
 
+/* prevenir reescalado automático de texto en iOS/Android */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
